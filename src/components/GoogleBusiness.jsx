@@ -1,13 +1,14 @@
 import { Star, MapPin, Phone, Clock, MessageCircle } from "lucide-react";
+import config from "../config";
 
 export default function GoogleBusiness() {
-  const rating = 4.1;
-  const totalReviews = 12;
+  const rating = config.googleBusiness.rating;
+  const totalReviews = config.googleBusiness.totalReviews;
 
   const isOpen = () => {
     const now = new Date();
     const hour = now.getHours();
-    return hour >= 8 && hour < 20;
+    return hour >= config.googleBusiness.hoursOpen && hour < config.googleBusiness.hoursClose;
   };
 
   const renderStars = () => {
@@ -33,14 +34,14 @@ export default function GoogleBusiness() {
           {/* HEADER */}
           <div className="google-header">
             <div className="google-title">
-              Shri Tirupati Balaji Communication
+              {config.businessName}
             </div>
 
             <div className="google-rating">
               {renderStars()}
               <span className="rating-number">{rating}</span>
               <a
-                href="https://search.google.com/local/writereview?placeid=ChIJdTHBh3_gdTkRzYOnfqVgBjA"
+                href={config.googleBusiness.reviewLink}
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -49,7 +50,7 @@ export default function GoogleBusiness() {
             </div>
 
             <div className="google-badge">
-              Mobile phone repair shop in Etawah, Uttar Pradesh
+              {config.googleBusiness.businessType}
             </div>
           </div>
 
@@ -57,18 +58,17 @@ export default function GoogleBusiness() {
           <div className="google-details">
             <p>
               <MapPin size={16} />
-              <strong> Address:</strong> Vijay Nagar Chauraha, Friends Colony,
-              Etawah, Uttar Pradesh 206001
+              <strong> Address:</strong> {config.address}
             </p>
 
             <p>
               <Phone size={16} />
-              <strong> Phone:</strong> +91 92191 19832
+              <strong> Phone:</strong> +91 {config.phone}
             </p>
 
             <p>
               <Clock size={16} />
-              <strong> Hours:</strong> 8 AM – 8 PM ·{" "}
+              <strong> Hours:</strong> {config.googleBusiness.hoursOpen} AM – {config.googleBusiness.hoursClose} PM ·{" "}
               <span className={isOpen() ? "open" : "closed"}>
                 {isOpen() ? "Open Now" : "Closed"}
               </span>
@@ -76,12 +76,12 @@ export default function GoogleBusiness() {
           </div>
           {/* ACTION BUTTONS */}
           <div className="google-actions">
-            <a href="tel:9219119832" className="google-btn primary">
+            <a href={`tel:${config.phone}`} className="google-btn primary">
               <Phone size={16} /> Call Now
             </a>
 
             <a
-              href="https://www.google.com/maps/search/?api=1&query=Shri+Tirupati+Balaji+Communication+Etawah"
+              href={config.googleBusiness.mapsLink}
               target="_blank"
               rel="noopener noreferrer"
               className="google-btn secondary"

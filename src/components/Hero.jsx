@@ -1,10 +1,25 @@
 import config from "../config";
+import { useState, useEffect } from "react";
 
 export default function Hero() {
+  const [isDark, setIsDark] = useState(localStorage.getItem("darkMode") === "true");
+
+  useEffect(() => {
+    const handleDarkModeChange = () => {
+      setIsDark(localStorage.getItem("darkMode") === "true");
+    };
+
+    window.addEventListener("darkModeChange", handleDarkModeChange);
+
+    return () => {
+      window.removeEventListener("darkModeChange", handleDarkModeChange);
+    };
+  }, []);
+
   return (
     <>
-      <div className="top-banner">
-        <img src="../SHOP_BANNER.png" alt="Shop Banner" />
+      <div className="top-banner" style={{ background: isDark ? "#1f2937" : "var(--primary-color)" }}>
+        <img src={isDark ? "../SHOP_BANNER_DARK.png" : "../SHOP_BANNER.png"} alt="Shop Banner" />
       </div>
 
       <section className="hero-clean">

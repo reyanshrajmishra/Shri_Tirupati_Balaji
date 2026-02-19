@@ -1,4 +1,7 @@
 import { ShieldCheck, Clock, IndianRupee } from "lucide-react";
+import config from "../config";
+
+const icons = [ShieldCheck, Clock, IndianRupee];
 
 export default function WhyUs() {
   return (
@@ -8,23 +11,16 @@ export default function WhyUs() {
         <div className="section-divider"></div>
 
         <div className="why-grid">
-          <div className="why-card">
-            <ShieldCheck size={40} />
-            <h3>Trusted Service</h3>
-            <p>Years of experience serving local customers.</p>
-          </div>
-
-          <div className="why-card">
-            <Clock size={40} />
-            <h3>Quick Repairs</h3>
-            <p>Fast turnaround and mostly same-day solutions.</p>
-          </div>
-
-          <div className="why-card">
-            <IndianRupee size={40} />
-            <h3>Fair Pricing</h3>
-            <p>Affordable rates with no hidden charges.</p>
-          </div>
+          {config.whyUs.map((item, index) => {
+            const Icon = icons[index % icons.length];
+            return (
+              <div className="why-card" key={index}>
+                <Icon size={40} />
+                <h3>{item.title}</h3>
+                <p>{item.description}</p>
+              </div>
+            );
+          })}
         </div>
       </div>
     </section>

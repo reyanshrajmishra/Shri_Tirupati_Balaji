@@ -1,31 +1,22 @@
 import { ShieldCheck, Clock, BadgeCheck, Wrench } from "lucide-react";
+import config from "../config";
+
+const icons = [ShieldCheck, Clock, Wrench, BadgeCheck];
 
 export default function TrustStrip() {
   return (
     <section className="trust-strip fade-in">
       <div className="container">
         <div className="trust-grid">
-
-          <div className="trust-item">
-            <ShieldCheck size={22} />
-            Genuine Parts
-          </div>
-
-          <div className="trust-item">
-            <Clock size={22} />
-            Mostly Same-Day Repairs
-          </div>
-
-          <div className="trust-item">
-            <Wrench size={22} />
-            15+ Years Experience
-          </div>
-
-          <div className="trust-item">
-            <BadgeCheck size={22} />
-            Service Warranty (on Accessories)
-          </div>
-
+          {config.trustPoints.map((item, index) => {
+            const Icon = icons[index % icons.length];
+            return (
+              <div className="trust-item" key={index}>
+                <Icon size={22} />
+                {item.title}
+              </div>
+            );
+          })}
         </div>
       </div>
     </section>

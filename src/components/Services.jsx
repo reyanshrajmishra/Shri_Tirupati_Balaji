@@ -46,16 +46,11 @@ export default function Services() {
           <div className="section-divider"></div>
 
           <div className="brands-grid">
-            <div className="brand-item">Apple</div>
-            <div className="brand-item">Samsung</div>
-            <div className="brand-item">Xiaomi / Redmi</div>
-            <div className="brand-item">Oppo</div>
-            <div className="brand-item">Vivo</div>
-            <div className="brand-item">Realme</div>
-            <div className="brand-item">OnePlus</div>
-            <div className="brand-item">Lenovo</div>
-            <div className="brand-item">Asus</div>
-            <div className="brand-item">Acer</div>
+            {config.devices.map((device, index) => (
+              <div className="brand-item" key={index}>
+                {device}
+              </div>
+            ))}
             <div className="brand-item">And More.....</div>
           </div>
 
