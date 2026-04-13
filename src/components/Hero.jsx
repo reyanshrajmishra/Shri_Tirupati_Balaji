@@ -25,7 +25,7 @@ export default function Hero() {
       <section className="hero-clean">
         <div className="container hero-clean-inner">
           <h1>{config.businessName}</h1>
-          <p>{config.tagline}</p>
+          <p className="hero-tagline">{config.tagline}</p>
 
           <div className="hero-buttons">
             <a href={`tel:${config.phone}`} className="primary-btn">

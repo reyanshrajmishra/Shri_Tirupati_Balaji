@@ -21,10 +21,10 @@ export default function Contact() {
       <div className="container">
         <h2>{config.contact.title}</h2>
         <div className="section-divider"></div>
-        <p>
+        <p className="contact-detail">
           <strong>Phone:</strong> {config.phone}
         </p>
-        <p>
+        <p className="contact-detail">
           <strong>Address:</strong> {config.address}
         </p>
         <iframe

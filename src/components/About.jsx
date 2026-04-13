@@ -7,8 +7,8 @@ export default function About() {
         <div>
           <h2 style={{ textAlign: "center" }}>{config.about.title}</h2>
           <div className="section-divider"></div>
-          <p>{config.about.description1}</p>
-          <p>{config.about.description2}</p>
+          <p className="about-description">{config.about.description1}</p>
+          <p className="about-description">{config.about.description2}</p>
         </div>
 
         <div>

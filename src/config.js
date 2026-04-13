@@ -48,6 +48,9 @@ const config = {
     textMuted: "#d1d5db",
     textLight: "#9ca3af",
     gradientEndColor: "#ff751d",
+    aboutDescriptionColor: "#e5e7eb",
+    heroTaglineColor: "#e5e7eb",
+    contactTextColor: "#e5e7eb",
   },
   
   // Operating Hours
@@ -61,6 +64,7 @@ const config = {
   hero: {
     heading: "Professional Mobile & Computer Repair",
     subheading: "Quality service you can trust",
+    taglineColor: "#374151",
   },
 
   // Services Section
@@ -110,6 +114,7 @@ const config = {
     title: "About Our Shop",
     description1: "We provide reliable mobile and computer repair services with professional support and genuine parts.",
     description2: "Customer satisfaction and long-term trust is our priority.",
+    descriptionColor: "#374151",
   },
 
   // Why Us Section
@@ -132,6 +137,7 @@ const config = {
   contact: {
     title: "Contact Us",
     mapEmbed: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3502.407694852673!2d79.0458694758032!3d26.74890057684953!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x300660a57ea783cd!2sShri%20Tirupati%20Balaji%20Communication%2C%20Etawah%2C%20UP%2C%20India!5e0!3m2!1sen!2sus!4v1699999999999",
+    textColor: "#374151",
   },
 
   // Trust Strip Section
@@ -158,7 +164,7 @@ const config = {
     reviewLink: "https://search.google.com/local/writereview?placeid=ChIJdTHBh3_gdTkRzYOnfqVgBjA",
     mapsLink: "https://www.google.com/maps/search/?api=1&query=Shri+Tirupati+Balaji+Communication+Etawah",
     hoursOpen: 10,
-    hoursClose: 20,
+    hoursClose: 8,
   },
 
   // Footer

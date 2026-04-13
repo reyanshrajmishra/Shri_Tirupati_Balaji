@@ -41,6 +41,9 @@ export default function TopBar() {
       textMuted: config.textMuted,
       textLight: config.textLight,
       gradientEndColor: config.gradientEndColor,
+      aboutDescriptionColor: config.about.descriptionColor,
+      heroTaglineColor: config.hero.taglineColor,
+      contactTextColor: config.contact.textColor,
     };
 
     document.documentElement.style.setProperty("--light-bg", colors.bgLight);
@@ -59,6 +62,18 @@ export default function TopBar() {
     document.documentElement.style.setProperty("--success-color", config.successColor);
     document.documentElement.style.setProperty("--warning-color", config.warningColor);
     document.documentElement.style.setProperty("--gradient-end", colors.gradientEndColor);
+    document.documentElement.style.setProperty(
+      "--about-description-color",
+      colors.aboutDescriptionColor || colors.textMuted
+    );
+    document.documentElement.style.setProperty(
+      "--hero-tagline-color",
+      colors.heroTaglineColor || colors.textMuted
+    );
+    document.documentElement.style.setProperty(
+      "--contact-text-color",
+      colors.contactTextColor || colors.textMuted
+    );
 
     // Update gradient variables
     document.documentElement.style.setProperty(
