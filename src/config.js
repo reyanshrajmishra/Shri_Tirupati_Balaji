@@ -99,7 +99,6 @@ const config = {
   devices: [
     "Apple",
     "Google",
-    "Honor",
     "Huawei",
     "Motorola",
     "OnePlus",

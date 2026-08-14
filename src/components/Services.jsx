@@ -6,7 +6,6 @@ const icons = [Smartphone, BatteryCharging, Cpu, HardDrive, Wrench, ShieldCheck]
 const brandDomains = {
   "Apple": "apple.com",
   "Google": "google.com",
-  "Honor": "honor.com",
   "Huawei": "huawei.com",
   "Motorola": "motorola.com",
   "OnePlus": "oneplus.com",
