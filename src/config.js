@@ -62,7 +62,7 @@ const config = {
 
   // Hero Section
   hero: {
-    heading: "Professional Mobile & Computer Repair",
+    heading: "Professional Mobile Repair",
     subheading: "Quality service you can trust",
     taglineColor: "#374151",
   },
@@ -98,21 +98,23 @@ const config = {
   // Brands We Service
   devices: [
     "Apple",
-    "Samsung",
-    "Xiaomi / Redmi",
-    "Oppo",
-    "Vivo",
-    "Realme",
+    "Google",
+    "Honor",
+    "Huawei",
+    "Motorola",
     "OnePlus",
-    "Lenovo",
-    "Asus",
-    "Acer",
+    "Oppo",
+    "Realme",
+    "Samsung",
+    "Sony",
+    "Vivo",
+    "Xiaomi / Redmi",
   ],
 
   // About Section
   about: {
     title: "About Our Shop",
-    description1: "We provide reliable mobile and computer repair services with professional support and genuine parts.",
+    description1: "We provide reliable mobile phone repair services with professional support and genuine parts.",
     description2: "Customer satisfaction and long-term trust is our priority.",
     descriptionColor: "#374151",
   },
@@ -146,13 +148,13 @@ const config = {
       title: "Genuine Parts",
     },
     {
-      title: "Mostly Same-Day Repairs",
+      title: "Same-Day Repairs",
     },
     {
       title: "15+ Years Experience",
     },
     {
-      title: "Service Warranty (on Accessories)",
+      title: "Service Warranty",
     },
   ],
 

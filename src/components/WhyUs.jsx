@@ -5,9 +5,10 @@ const icons = [ShieldCheck, Clock, IndianRupee];
 
 export default function WhyUs() {
   return (
-    <section className="why-section">
+    <section className="why-section" id="why">
       <div className="container">
-        <h2>Why Choose Us</h2>
+        <div className="section-tagline">Why Us</div>
+        <h2 className="section-title">Why Choose Us</h2>
         <div className="section-divider"></div>
 
         <div className="why-grid">

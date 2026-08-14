@@ -1,4 +1,5 @@
 import config from "../config";
+import { Phone, MessageCircle, MapPin } from "lucide-react";
 import { useState, useEffect } from "react";
 
 export default function Hero() {
@@ -8,39 +9,42 @@ export default function Hero() {
     const handleDarkModeChange = () => {
       setIsDark(localStorage.getItem("darkMode") === "true");
     };
-
     window.addEventListener("darkModeChange", handleDarkModeChange);
-
-    return () => {
-      window.removeEventListener("darkModeChange", handleDarkModeChange);
-    };
+    return () => window.removeEventListener("darkModeChange", handleDarkModeChange);
   }, []);
 
   return (
-    <>
-      <div className="top-banner" style={{ background: isDark ? "#1f2937" : "var(--primary-color)" }}>
-        <img src={isDark ? "../SHOP_BANNER_DARK.png" : "../SHOP_BANNER.png"} alt="Shop Banner" />
+    <section className="hero">
+      <div className="hero-bg">
+        <img
+          src={isDark ? "/BANNER_DARK.jpg" : "/BANNER.jpg"}
+          alt="Shri Tirupati Balaji Communications repair shop"
+        />
       </div>
+      <div className="hero-overlay" />
 
-      <section className="hero-clean">
-        <div className="container hero-clean-inner">
-          <h1>{config.businessName}</h1>
-          <p className="hero-tagline">{config.tagline}</p>
+      <div className="hero-content">
+        <div className="hero-badge">Mobile Repair Specialists</div>
+        <h1>{config.businessName}</h1>
+        <p className="hero-address">
+          <MapPin size={14} style={{ display: "inline", verticalAlign: "middle", marginRight: 4 }} />
+          Vijay Nagar chauraha, Friends Colony, Etawah
+        </p>
 
-          <div className="hero-buttons">
-            <a href={`tel:${config.phone}`} className="primary-btn">
-              Call Now
-            </a>
-            <a
-              href={`https://wa.me/91${config.whatsapp}`}
-              target="_blank"
-              className="secondary-btn"
-            >
-              WhatsApp
-            </a>
-          </div>
+        <div className="hero-buttons">
+          <a href={`tel:${config.phone}`} className="hero-btn hero-btn-primary">
+            <Phone size={16} /> Call Now
+          </a>
+          <a
+            href={`https://wa.me/91${config.whatsapp}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hero-btn hero-btn-outline"
+          >
+            <MessageCircle size={16} /> WhatsApp
+          </a>
         </div>
-      </section>
-    </>
+      </div>
+    </section>
   );
 }

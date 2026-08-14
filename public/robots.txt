@@ -1,0 +1,5 @@
+# robots.txt for Shri Tirupati Balaji Communications
+User-agent: *
+Allow: /
+
+Sitemap: https://shritirupatibalaji.in/sitemap.xml
