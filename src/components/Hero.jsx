@@ -1,23 +1,12 @@
 import config from "../config";
 import { Phone, MessageCircle, MapPin } from "lucide-react";
-import { useState, useEffect } from "react";
 
 export default function Hero() {
-  const [isDark, setIsDark] = useState(localStorage.getItem("darkMode") === "true");
-
-  useEffect(() => {
-    const handleDarkModeChange = () => {
-      setIsDark(localStorage.getItem("darkMode") === "true");
-    };
-    window.addEventListener("darkModeChange", handleDarkModeChange);
-    return () => window.removeEventListener("darkModeChange", handleDarkModeChange);
-  }, []);
-
   return (
     <section className="hero">
       <div className="hero-bg">
         <img
-          src={isDark ? "/BANNER_DARK.jpg" : "/BANNER.jpg"}
+          src="/BANNER.jpg"
           alt="Shri Tirupati Balaji Communications repair shop"
         />
       </div>
