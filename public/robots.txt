@@ -2,4 +2,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://shritirupatibalaji.in/sitemap.xml
+Sitemap: https://www.shritirupatibalaji.in/sitemap.xml

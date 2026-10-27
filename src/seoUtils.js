@@ -1,4 +1,10 @@
-export const updateSEO = (title, description, canonicalUrl = window.location.href) => {
+// The ONE canonical origin for this site. Never derive this from window.location:
+// the site is also reachable at shritirupatibalaji.netlify.app, and a
+// location-derived canonical makes Google treat the netlify.app host as the
+// real page instead of the custom domain.
+export const SITE_URL = "https://www.shritirupatibalaji.in";
+
+export const updateSEO = (title, description, canonicalUrl = `${SITE_URL}/`) => {
   if (title) document.title = title;
 
   if (description) {
@@ -40,8 +46,8 @@ export const seoData = {
     "@context": "https://schema.org",
     "@type": "ElectronicsRepair",
     "name": "Shri Tirupati Balaji Communications",
-    "image": "https://shritirupatibalaji.in/SHOP_LOGO.jpeg",
-    "url": "https://shritirupatibalaji.in",
+    "image": "https://www.shritirupatibalaji.in/SHOP_LOGO.jpeg",
+    "url": "https://www.shritirupatibalaji.in",
     "telephone": "+919219119832",
     "email": "balajietw5@gmail.com",
     "address": {

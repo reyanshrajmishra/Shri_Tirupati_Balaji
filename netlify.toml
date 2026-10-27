@@ -5,6 +5,34 @@
 [build.environment]
   NODE_VERSION = "20"
 
+# ---------------------------------------------------------------------------
+# Canonical host enforcement
+# Keep this block ABOVE the SPA fallback. Domain-level rules are matched on the
+# full request URL, so they must not be shadowed by the catch-all rewrite.
+# ---------------------------------------------------------------------------
+
+# 1. Netlify subdomain -> custom domain.
+#    This is what deindexes shritirupatibalaji.netlify.app: a 301 tells Google
+#    the netlify.app URL is permanently gone, so it consolidates onto the
+#    custom domain instead of competing with it. Do NOT try to do this with an
+#    X-Robots-Tag noindex header -- _headers rules match paths, not hosts, so
+#    that header would also noindex the real site.
+[[redirects]]
+  from = "https://shritirupatibalaji.netlify.app/*"
+  to = "https://www.shritirupatibalaji.in/:splat"
+  status = 301
+  force = true
+
+# 2. Apex -> www, so there is exactly one indexable hostname.
+#    https://www.shritirupatibalaji.in is the primary domain, so this matches
+#    the canonical tags, sitemap and robots.txt.
+[[redirects]]
+  from = "https://shritirupatibalaji.in/*"
+  to = "https://www.shritirupatibalaji.in/:splat"
+  status = 301
+  force = true
+
+# 3. SPA fallback. Must stay last.
 [[redirects]]
   from = "/*"
   to = "/index.html"
